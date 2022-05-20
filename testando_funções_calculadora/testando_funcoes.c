@@ -1,86 +1,98 @@
 #include<stdio.h>
 #include<locale.h>
 
-void escolha();
-void tabSoma();
-void tabSub();
-void tabDivi();
-void tabMulti();
+int menu();
+void soma();
+void div();
+void sub();
+void multi();
 
 int main(void){
-	
 	setlocale(LC_ALL, "Portuguese");
 	
-	int op;
+	menu();
 	
-	printf("Escolha: 1-Soma\n2-Sub\n3-Divi\n4-Multi: \nEscolha: ");
+}
+
+int menu(){
+	int op;
+	printf("\n\tCalculadora\n");
+	printf("\n1-Soma \n2-Div \n3-Sub \n4-Multi \n\nDigite uma opção\n");
 	scanf("%d", &op);
 	
-	while(op!=4){
-		switch(op){
-			case 1:
-				printf("\n\tSoma\n");
-				escolha();
-				break;
-			case 2:
-				printf("\n\tSubtração\n");
-				escolha();
-				break;
-		}
+	if(op==1){
+		soma();
+	}else if(op==2){
+		div();
+	}else if(op==3){
+		sub();
+	}else{
+		multi();
 	}
-		
-
-}
-
-void escolha(){
-	int x, y;
-	printf("\nDigite início da tabuada: ");
-	scanf("%d",&x);
-	printf("Digite fim da tabuada: ");
-	scanf("%d",&y);
 	
 }
 
-void tabSoma(int inicio, int fim){
-	int i, j, aux;
+void soma(){
+	int i, j, aux, inicio, fim, res;
+	printf("Digite o início da tabuada: ");
+	scanf("%d", &inicio);
+	printf("Digite o fim da tabuada: ");
+	scanf("%d", &fim);
+	
 	for(i=inicio;i<=fim;i++){
-			for(j=0;j<10;j++){
-				aux = i+j;
-				printf("\n%d + %d = %d",i,j,aux);
-			}
-			printf("\n");
+		for(j=0; j<10; j++){
+			aux = i+j;
+			printf("\n%d + %d = %d",i,j,aux);
 		}
+		printf("\n");
+	}
+	
 }
 
-void tabSub(int inicio, int fim){
-	int i, j, aux;
+void div(){
+	int i, j, aux, inicio, fim, res;
+	printf("Digite o início da tabuada: ");
+	scanf("%d", &inicio);
+	printf("Digite o fim da tabuada: ");
+	scanf("%d", &fim);
+	
 	for(i=inicio;i<=fim;i++){
-			for(j=0;j<10;j++){
-				aux = i-j;
-				printf("\n%d - %d = %d",i,j,aux);
-			}
-			printf("\n");
+		for(j=0; j<10; j++){
+			aux = i/j;
+			printf("\n%d / %d = %d",i,j,aux);
 		}
+		printf("\n");
+	}
 }
 
-void tabDivi(int inicio, int fim){
-	int i, j, aux;
+void sub(){
+	int i, j, aux, inicio, fim, res;
+	printf("Digite o início da tabuada: ");
+	scanf("%d", &inicio);
+	printf("Digite o fim da tabuada: ");
+	scanf("%d", &fim);
+	
 	for(i=inicio;i<=fim;i++){
-			for(j=0;j<10;j++){
-				aux = i/j;
-				printf("\n%d / %d = %d",i,j,aux);
-			}
-			printf("\n");
+		for(j=0; j<10; j++){
+			aux = i-j;
+			printf("\n%d - %d = %d",i,j,aux);
 		}
+		printf("\n");
+	}
 }
 
-void tabMult(int inicio, int fim){
-	int i, j, aux;
+void multi(){
+	int i, j, aux, inicio, fim, res;
+	printf("Digite o início da tabuada: ");
+	scanf("%d", &inicio);
+	printf("Digite o fim da tabuada: ");
+	scanf("%d", &fim);
+	
 	for(i=inicio;i<=fim;i++){
-			for(j=0;j<10;j++){
-				aux = i*j;
-				printf("\n%d * %d = %d",i,j,aux);
-			}
-			printf("\n");
+		for(j=0; j<10; j++){
+			aux = i*j;
+			printf("\n%d * %d = %d",i,j,aux);
 		}
+		printf("\n");
+	}
 }
