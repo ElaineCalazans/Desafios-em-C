@@ -58,7 +58,7 @@ void div(){
 	
 	for(i=inicio;i<=fim;i++){
 		for(j=0; j<10; j++){
-			aux = i/j;
+			aux = i%j;
 			printf("\n%d / %d = %d",i,j,aux);
 		}
 		printf("\n");
